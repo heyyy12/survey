@@ -505,7 +505,7 @@ footer a:hover { color: var(--muted); }
 }</pre>
     <ol start="3">
       <li>Deploy → New deployment → Web app → Execute as: Me → Anyone → Deploy.</li>
-      <li>Copy the Web app URL and replace <code>https://script.google.com/macros/s/AKfycbxKSpPzM5EjF8GBjbLe5QfM6Z8X-Mcu4Jn2FJeXdxRRLXDkIANJArW8vRCMMxqpXdW8KA/exec</code> in the script at the bottom of this file.</li>
+      <li>Copy the Web app URL and replace <code>https://script.google.com/macros/s/AKfycbz6NlK3YFfpL5tGWpF3tmRrVxdYMHP751AT1wTlMNf_9Rz4G6Lqdlv16kzCayhGq-jkSQ/exec</code> in the script at the bottom of this file.</li>
     </ol>
   </details>
 </div>
@@ -760,7 +760,7 @@ footer a:hover { color: var(--muted); }
 })();
 
 /* ─── form logic ─── */
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKSpPzM5EjF8GBjbLe5QfM6Z8X-Mcu4Jn2FJeXdxRRLXDkIANJArW8vRCMMxqpXdW8KA/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz6NlK3YFfpL5tGWpF3tmRrVxdYMHP751AT1wTlMNf_9Rz4G6Lqdlv16kzCayhGq-jkSQ/exec';
 
 // Bu fonksiyonu her zaman 'true' dönecek şekilde sadeleştirdik
 function isConfigured() { return true; }
@@ -786,11 +786,11 @@ async function handleSubmit() {
   btn.textContent = 'Sending...';
 
   try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify({ q1, q2, q3, q4 })  // ← SADECE BU DEĞİŞTİ
-    });
+  await fetch(SCRIPT_URL, {
+  method: 'POST',
+  mode: 'no-cors',
+  body: new URLSearchParams({ q1, q2, q3, q4 })
+});
     console.log("Data sent successfully");
   } catch(e) { 
     console.error("Submission error:", e); 
