@@ -786,20 +786,12 @@ async function handleSubmit() {
   btn.textContent = 'Sending...';
 
   try {
-    const formData = new FormData();
-    formData.append("q1", q1);
-    formData.append("q2", q2);
-    formData.append("q3", q3);
-    formData.append("q4", q4);
-
     await fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      body: formData
+      body: JSON.stringify({ q1, q2, q3, q4 })  // ← SADECE BU DEĞİŞTİ
     });
-
     console.log("Data sent successfully");
-
   } catch(e) { 
     console.error("Submission error:", e); 
   }
