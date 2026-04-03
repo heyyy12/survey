@@ -189,10 +189,9 @@ function handleSubmit() {
   var btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Sending...';
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: new URLSearchParams({ q1: q1, q2: q2, q3: q3, q4: q4 })
+fetch(SCRIPT_URL + '?' + new URLSearchParams({ q1: q1, q2: q2, q3: q3, q4: q4 }), {
+    method: 'GET',
+    mode: 'no-cors'
   }).catch(function(e){ console.error(e); }).finally(function(){ showThankyou(); });
 }
 
