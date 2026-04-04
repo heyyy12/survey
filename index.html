@@ -34,36 +34,44 @@ nav { padding: 22px 48px; display: flex; justify-content: space-between; align-i
 .sparkle-row svg:nth-child(2) { animation: twinkle 3.2s ease-in-out infinite 1.1s; }
 .sparkle-row svg:nth-child(3) { animation: twinkle 3.2s ease-in-out infinite 2.0s; }
 @keyframes twinkle { 0%,100%{opacity:0.35;transform:scale(1) rotate(0deg);filter:none} 50%{opacity:1;transform:scale(1.35) rotate(15deg);filter:drop-shadow(0 0 6px #88c4f5) drop-shadow(0 0 12px rgba(136,196,245,0.6))} }
-/* Bu kısmı mevcut olanla değiştir veya üzerine yaz */
-.plain-section { 
-  max-width: 560px; 
-  margin: 0 auto 48px; 
-  padding: 0 48px; 
-  color: var(--text); /* Yazıların görünmesi için bu şart */
+/* Bu sınıflar senin kodunda eksik olduğu için yazılar görünmüyor */
+.plain-section {
+  max-width: 560px;
+  margin: 0 auto 48px;
+  padding: 0 48px;
+  color: var(--text); /* Yazıların ana rengini beyaz yapar */
 }
 
-.steps-title { 
-  font-family: var(--serif); 
-  font-size: 36px; 
-  font-style: italic; 
-  font-weight: 300; 
-  color: var(--text); /* Başlık rengi */
-  margin-bottom: 28px; 
+.steps-title {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 28px;
 }
 
-.step-n { 
-  font-size: 19px; 
-  font-weight: 300; 
-  color: rgba(255,255,255,0.80); /* Rakamların rengi */
-  min-width: 22px; 
-  opacity: 0.5; 
+.step-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.step-txt { 
-  font-size: 19px; 
-  font-weight: 300; 
-  color: rgba(255,255,255,0.80); /* Metinlerin rengi */
-  line-height: 1.75; 
+.step-n {
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5); /* Numaraları hafif şeffaf yapar */
+  min-width: 22px;
+}
+
+.step-txt {
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8); /* Metni belirginleştirir */
+  line-height: 1.75;
 }
 .rule { max-width: 720px; margin: 32px auto 40px; padding: 0 48px; }
 .rule hr { border: none; border-top: 1px solid var(--border); }
