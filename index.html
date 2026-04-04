@@ -29,13 +29,13 @@ nav { padding: 22px 48px; display: flex; justify-content: space-between; align-i
 .hero-line { width: 1px; height: 48px; background: linear-gradient(to bottom,transparent,rgba(255,255,255,0.2),transparent); margin: 0 auto 32px; }
 .hero-desc { font-size: 19px; color: rgba(255,255,255,0.80); max-width: 680px; margin: 0 auto 16px; line-height: 1.75; font-weight: 300; text-align: center; }
 
-/* WHAT TO DO KISMI CSS - GÖRÜNMESİNİ SAĞLAR */
-.plain-section { max-width: 560px; margin: 0 auto 48px; padding: 0 48px; }
-.steps-title { font-family: var(--serif); font-size: 36px; font-style: italic; font-weight: 300; color: #ffffff; margin-bottom: 28px; }
+/* WHAT TO DO KISMI CSS - GÖRÜNMESİNİ GARANTİ EDER */
+.plain-section { max-width: 560px; margin: 0 auto 48px; padding: 0 48px; display: block !important; }
+.steps-title { font-family: var(--serif); font-size: 36px; font-style: italic; font-weight: 300; color: #ffffff !important; margin-bottom: 28px; }
 .steps-list { display: flex; flex-direction: column; gap: 20px; }
 .step-item { display: flex; gap: 20px; align-items: flex-start; }
-.step-n { font-size: 19px; font-weight: 300; color: rgba(255,255,255,0.4); min-width: 22px; }
-.step-txt { font-size: 19px; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.75; }
+.step-n { font-size: 19px; font-weight: 300; color: rgba(255,255,255,0.4) !important; min-width: 22px; }
+.step-txt { font-size: 19px; font-weight: 300; color: rgba(255,255,255,0.8) !important; line-height: 1.75; }
 
 .sparkle-row { display: flex; justify-content: center; gap: 56px; padding: 40px 0; }
 .sparkle-row svg { overflow: visible; animation: twinkle 3.2s ease-in-out infinite; }
@@ -95,8 +95,8 @@ footer { border-top: 1px solid var(--border); padding: 26px 48px; display: flex;
 <section class="thankyou" id="thankyou"><h2>Thank you.</h2><p>Your words are in.</p></section>
 
 <script>
-// JAVASCRIPT - VERİ GÖNDERME
-const SCRIPT_URL = 'BURAYA_YENI_GOOGLE_URL_YAPISTIRIN'; 
+// JAVASCRIPT - GOOGLE SHEETS URL'Nİ BURAYA YAPIŞTIR
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6LG9biIbKmDE05Or0SBL1sJe23lvVSCi6iZwYEg5d7bC3V4FejWNJP94WttTle5Sd/exec'; 
 
 async function handleSubmit() {
   const data = {
