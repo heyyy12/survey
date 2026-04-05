@@ -99,24 +99,20 @@ footer { border-top: 1px solid var(--border); padding: 26px 48px; display: flex;
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz6NlK3YFfpL5tGWpF3tmRrVxdYMHP751AT1wTlMNf_9Rz4G6Lqdlv16kzCayhGq-jkSQ/exec'; 
 
 async function handleSubmit() {
-  const data = {
-    q1: document.getElementById('q1').value.trim(),
-    q2: document.getElementById('q2').value.trim(),
-    q3: document.getElementById('q3').value.trim(),
-    q4: document.getElementById('q4').value.trim()
-  };
+  const q1 = document.getElementById('q1').value.trim();
+  const q2 = document.getElementById('q2').value.trim();
+  const q3 = document.getElementById('q3').value.trim();
+  const q4 = document.getElementById('q4').value.trim();
   
-  if (!data.q1 && !data.q2 && !data.q3 && !data.q4) { alert('Please fill at least one.'); return; }
+  if (!q1 && !q2 && !q3 && !q4) { alert('Please fill at least one.'); return; }
   
   document.getElementById('submitBtn').disabled = true;
   document.getElementById('submitBtn').textContent = 'Sending...';
 
   try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+    await fetch(SCRIPT_URL + '?' + new URLSearchParams({ q1, q2, q3, q4 }), {
+      method: 'GET',
+      mode: 'no-cors'
     });
   } catch(e) { console.error(e); }
   
